@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  
+
   <title>Travel Website</title>
   <style>
+    @import url(https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,300,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css);
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -144,10 +150,9 @@
     <img src="logo-placeholder.png" alt="Logo">
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Destinations</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About Us</a></li>
         <li><a href="#">Stories</a></li>
-        <li><a href="#">Sign In</a></li>
         <li><a href="#">Maps</a></li>
         <li><a href="#">Shop</a></li>
       </ul>
@@ -164,24 +169,24 @@
     <h2>Top Art Gallaries</h2>
     <div class="grid">
       <div class="card">
-        <img src="static/images/backimage.jpg" alt="Destination">
+        <img src="static/images/nobody.jpg" alt="Destination">
         <div class="content">
           <h3>Noboby Owns Me</h3>
-          <p>Explore the iconic hand bridge of Vietnam.</p>
+          <p>Explore the iconic Art.</p>
         </div>
       </div>
       <div class="card">
         <img src="static/images/nobody.jpg" alt="Destination">
         <div class="content">
           <h3>Uweza Art Gallary</h3>
-          <p>Discover the charm of this medieval city.</p>
+          <p>Discover the charm of Art.</p>
         </div>
       </div>
       <div class="card">
         <img src="static/images/rafiki.jpg" alt="Destination">
         <div class="content">
           <h3>Rafiki Art Space</h3>
-          <p>Experience breathtaking views from above.</p>
+          <p>Experience breathtaking views.</p>
         </div>
       </div>
     </div>
@@ -249,7 +254,57 @@
   </section>
 
   <footer>
-    <p>&copy; Kibera Connect. All rights reserved. <a href="#">Privacy Policy</a></p>
+    <nav class="navbar navbar-toggleable-md fixed-top navbar-transparent" color-on-scroll="500">
+      <div class="container">
+          <div class="navbar-translate">
+              <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button"
+                  data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-bar"></span>
+                  <span class="navbar-toggler-bar"></span>
+                  <span class="navbar-toggler-bar"></span>
+              </button>
+              <a class="navbar-brand" href="https://www.example.com">LOGO</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarToggler">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom"
+                          href="https://twitter.com/" target="_blank">
+                          <i class="fa fa-twitter"></i>
+                          <p class="hidden-lg-up">Twitter</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom"
+                          href="https://www.facebook.com/IcomDigitalAgency/" target="_blank">
+                          <i class="fa fa-facebook-square"></i>
+                          <p class="hidden-lg-up">Facebook</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom"
+                          href="https://www.instagram.com/icom.digital" target="_blank">
+                          <i class="fa fa-instagram"></i>
+                          <p class="hidden-lg-up">Instagram</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom"
+                          href="https://codepen.io/icomgroup" target="_blank">
+                          <i class="fa fa-github"></i>
+                          <p class="hidden-lg-up">GitHub</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="https://www.example.com" target="_blank" class="btn btn-danger btn-round">Login</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <p>&copy; Kibera Connect. All rights reserved. <a href="#">Privacy Policy </a></p>
+    <P>@kibereconnect@gmail.com</P>
   </footer>
 </body>
 </html>
