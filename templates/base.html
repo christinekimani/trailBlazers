@@ -12,52 +12,51 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-toggleable-md fixed-top navbar-transparent" color-on-scroll="500">
-    <div class="container">
-      <div class="navbar-translate">
-        <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button"
-                data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-bar"></span>
-          <span class="navbar-toggler-bar"></span>
-          <span class="navbar-toggler-bar"></span>
-        </button>
-        <a class="navbar-brand" href="https://www.example.com">LOGO</a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarToggler">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/" target="_blank">
-              <i class="fa fa-twitter"></i>
-              <p class="hidden-lg-up">Twitter</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/IcomDigitalAgency/" target="_blank">
-              <i class="fa fa-facebook-square"></i>
-              <p class="hidden-lg-up">Facebook</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/icom.digital" target="_blank">
-              <i class="fa fa-instagram"></i>
-              <p class="hidden-lg-up">Instagram</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://codepen.io/icomgroup" target="_blank">
-              <i class="fa fa-github"></i>
-              <p class="hidden-lg-up">GitHub</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://www.example.com" target="_blank" class="btn btn-danger btn-round">Login</a>
-          </li>
-        </ul>
-      </div>
+<!-- Navbar -->
+<nav class="navbar navbar-toggleable-md fixed-top navbar-transparent" color-on-scroll="500">
+  <div class="container">
+    <div class="navbar-translate">
+      <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button"
+              data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <i class="fa fa-home"></i>
+      </a>
     </div>
-  </nav>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}" onclick="changePage('twitter')">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about_us' %}" onclick="changePage('about')">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'map' %}" onclick="changePage('gallery')">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'map' %}" onclick="changePage('map')">Map</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'map' %}" onclick="changePage('login')" class="btn btn-danger btn-round">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  function changePage(page) {
+    history.pushState({}, '', '/' + page);
+    document.title = page.charAt(0).toUpperCase() + page.slice(1); // Optional: Update page title
+  }
+</script>
+
+
 
   <!-- Main Content -->
   <div class="wrapper">
@@ -80,6 +79,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
   <script src="{% static 'js/script.js' %}"></script>
+  <script>
+    function changePage(page) {
+      history.pushState({}, '', page);
+      document.title = page.charAt(0).toUpperCase() + page.slice(1); // Update page title (optional)
+    }
+  </script>
+  
 
 </body>
 </html>
