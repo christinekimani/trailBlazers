@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Rook</title>
+  <title>Kibra Connect</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
@@ -27,32 +27,38 @@
     .carousel-button:hover {
       background-color: rgba(255, 0, 0, 0.7);
     }
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    footer a {
+      color: #ff5722;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800">
-  <!-- Header -->
   <header class="bg-black py-4">
     <div class="container mx-auto px-4">
       <img alt="Rook logo" class="h-12 mx-auto" src="https://storage.googleapis.com/a1aa/image/s7v2eu5cLU3u-hLIyy2AvN1z2CG_ttLzVsy2lYpSghw.jpg"/>
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="bg-red-gradient py-16 text-white">
     <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl font-bold mb-4">WELCOME TO ROOK</h1>
+      <h1 class="text-4xl font-bold mb-4">WELCOME TO KIBRA</h1>
       <p class="text-lg">Your gateway to creative innovation and design excellence.</p>
     </div>
   </section>
 
-  <!-- Connection Section -->
   <section class="text-center py-16 bg-white">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-black">WE ARE YOUR CONNECTION WITH THE CREATIVE UNDERWORLD</h2>
     </div>
   </section>
 
-  <!-- Team Section -->
   <section class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
       <div class="relative">
@@ -61,21 +67,31 @@
           <div class="flex-shrink-0 w-full md:w-1/2 flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-lg hover-scale">
             <img alt="Portrait of James Word" class="w-full md:w-1/2 rounded-lg" src="https://storage.googleapis.com/a1aa/image/tglVjZUzix3vDObsKGp8QNgRaXWzpy3j5pPNlJddq7c.jpg"/>
             <div class="md:w-1/2 md:pl-8 text-center md:text-left">
-              <h3 class="text-2xl font-bold text-red-600">JAMES WORD</h3>
-              <p class="text-gray-600">Creative Director</p>
-              <p class="mt-4 text-gray-700">James has worked with clients big and small and proved that the best ideas are the simplest ones. He has a knack for finding the right words and images to tell a story.</p>
+              <h3 class="text-2xl font-bold text-red-600">CHRISTINE KIMANI
+              <p class="text-gray-600">FOUNDER </p>
+              <p class="mt-4 text-gray-700"></p>
             </div>
           </div>
           <!-- Person 2 -->
           <div class="flex-shrink-0 w-full md:w-1/2 flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-lg hover-scale">
             <img alt="Portrait of Kyle Key" class="w-full md:w-1/2 rounded-lg" src="https://storage.googleapis.com/a1aa/image/DesUYtrVPeA_xRO0Lc-9hSuY70ys4Zmjq_WeKBBTJSQ.jpg"/>
             <div class="md:w-1/2 md:pl-8 text-center md:text-left">
-              <h3 class="text-2xl font-bold text-red-600">KYLE KEY</h3>
-              <p class="text-gray-600">Art Director</p>
-              <p class="mt-4 text-gray-700">Kyle is a visionary artist with a passion for creating stunning visuals. He has a keen eye for detail and a deep understanding of color theory.</p>
+              <h3 class="text-2xl font-bold text-red-600">TONY OTIENO
+                <p class="text-gray-600">CO-FOUNDER
+              <p class="mt-4 text-gray-700">.</p>
+            </div>
+          </div>
+          <div class="flex-shrink-0 w-full md:w-1/2 flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-lg hover-scale">
+            <img alt="Portrait of Kyle Key" class="w-full md:w-1/2 rounded-lg" src="https://storage.googleapis.com/a1aa/image/DesUYtrVPeA_xRO0Lc-9hSuY70ys4Zmjq_WeKBBTJSQ.jpg"/>
+            <div class="md:w-1/2 md:pl-8 text-center md:text-left">
+              <h3 class="text-2xl font-bold text-red-600">Emmanuel Shamer
+                <p class="text-gray-600">CO-FOUNDER
+              <p class="mt-4 text-gray-700">.</p>
             </div>
           </div>
         </div>
+        </div>
+        
         <button class="carousel-button absolute left-0 top-1/2 transform -translate-y-1/2 text-white p-4 rounded-full" onclick="scrollCarousel(-1)">
           <i class="fas fa-chevron-left"></i>
         </button>
@@ -119,27 +135,13 @@
     </div>
   </section>
 
-  <!-- Clients Section -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-8">SOME OF OUR CLIENTS</h2>
-      <div class="flex flex-wrap justify-center gap-8">
-        <img alt="AMC logo" class="h-12" src="https://storage.googleapis.com/a1aa/image/QQcPjqYHtnzrYoEyT0tP2rGNo3Q9MSBof7oMouv7Ja8.jpg"/>
-        <img alt="Comedy Central logo" class="h-12" src="https://storage.googleapis.com/a1aa/image/YuZedyCrSi0swZCyU5-LLbJc1XKqjvNfwN1IE4Hpv68.jpg"/>
-        <img alt="Disney logo" class="h-12" src="https://storage.googleapis.com/a1aa/image/NvcUy6ByFa-dygmzygaJ6ATUUS2uVsOEJsgMieD9_8E.jpg"/>
-        <img alt="NBC Universal logo" class="h-12" src="https://storage.googleapis.com/a1aa/image/sLkKBqCjTuqBHWnP39PD6bzfFn163WLxlhEgHeMZ0IY.jpg"/>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-white py-8">
-    <div class="container mx-auto px-4 text-center">
-      <img alt="Rook logo" class="h-12 mx-auto mb-4" src="https://storage.googleapis.com/a1aa/image/s7v2eu5cLU3u-hLIyy2AvN1z2CG_ttLzVsy2lYpSghw.jpg"/>
-      <p>© 2023 Rook. All rights reserved.</p>
-    </div>
+  <footer>
+    
+    <p>&copy; Kibera Connect. All rights reserved. <a href="#">Privacy Policy </a></p>
+    <P>@kibereconnect@gmail.com</P>
   </footer>
-
   <script>
     function scrollCarousel(direction) {
       const carousel = document.getElementById('carousel');
