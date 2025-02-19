@@ -7,16 +7,15 @@
     <style>
         /* General Styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-color: #f4f4f4;
             color: #333;
-            line-height: 1.6;
+            text-align: center;
         }
 
         h1, h2, h3 {
-            margin: 0;
             font-weight: bold;
         }
 
@@ -30,20 +29,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            background-color: #333;
+            padding: 15px 10%;
+            background-color: #222;
             color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 24px;
+            font-size: 26px;
         }
 
         nav a {
             margin: 0 15px;
             color: white;
-            font-weight: bold;
+            font-weight: 500;
             transition: color 0.3s ease;
         }
 
@@ -56,13 +55,13 @@
             position: relative;
             text-align: center;
             color: white;
-            overflow: hidden;
         }
 
         .hero img {
             width: 100%;
             height: 400px;
             object-fit: cover;
+            filter: brightness(70%);
         }
 
         .hero-text {
@@ -70,34 +69,36 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 36px;
+            font-size: 40px;
             font-weight: bold;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
 
         /* Grid Layout */
         .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
-            padding: 20px;
+            padding: 40px 10%;
         }
 
         .grid-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
+            width: 250px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
         }
 
         .grid-item img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 10px 10px 0 0;
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            border-radius: 12px 12px 0 0;
+            transition: transform 0.3s ease-in-out;
         }
 
         .grid-item:hover {
@@ -106,34 +107,21 @@
 
         .grid-item:hover img {
             transform: scale(1.1);
-            opacity: 0.9;
         }
 
         .grid-item h3 {
             padding: 15px;
             font-size: 18px;
-            text-align: center;
-            color: #333;
-        }
-
-        /* Sections */
-        section {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #333;
+            color: #444;
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #222;
             color: white;
             padding: 20px;
             text-align: center;
+            margin-top: 20px;
         }
 
         footer a {
@@ -141,44 +129,21 @@
             font-weight: bold;
         }
 
-        footer p {
-            margin: 5px 0;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 text-align: center;
             }
 
-            nav {
-                margin-top: 10px;
-            }
-
             .hero-text {
-                font-size: 24px;
-            }
-
-            .grid-container {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text {
-                font-size: 20px;
-            }
-
-            .grid-container {
-                grid-template-columns: 1fr;
+                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Trail Blazers</h1>
+        <h1>Kibra Connect</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="about_us.html">About Us</a>
@@ -190,100 +155,34 @@
 
     <section class="hero">
         <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Nairobi, Kibra">
-        <div class="hero-text">Kibra</div>
+        <div class="hero-text">Discover Kibra's Art</div>
     </section>
 
-    <section class="Uweza">
+    <section>
         <h2>Uweza Art</h2>
         <div class="grid-container">
             <div class="grid-item">
                 <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Art 1">
-                <h3>discription</h3>
+                <h3>Beautiful Abstract</h3>
             </div>
             <div class="grid-item">
                 <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Art 2">
-                <h3>discription</h3>
+                <h3>Vibrant Streets</h3>
             </div>
             <div class="grid-item">
                 <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Art 3">
-                <h3>discription</h3>
+                <h3>Local Culture</h3>
             </div>
             <div class="grid-item">
                 <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Art 4">
-                <h3>discription</h3>
-            </div>
-        </div>
-    </section>
-
-    <section class="Rafiki">
-        <h2>Rafiki Art</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Beach">
-                <h3>Beach</h3>
-            </div>
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="City">
-                <h3>City</h3>
-            </div>
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Health">
-                <h3>Health</h3>
-            </div>
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Ski">
-                <h3>Ski</h3>
-            </div>
-        </div>
-    </section>
-
-    <section class="popular-destinations">
-        <h2>Nobody Owns Me</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Hong Kong">
-                <h3>Hong Kong</h3>
-            </div>
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Bangkok">
-                <h3>Bangkok</h3>
-            </div>
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Singapore">
-                <h3>Singapore</h3>
-            </div>
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="UAE">
-                <h3>UAE</h3>
-            </div>
-        </div>
-    </section>
-
-    <section class="blog">
-        <h2>Blog</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Blog 1">
-                <h3>Blog 1</h3>
-            </div>
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Blog 2">
-                <h3>Blog 2</h3>
-            </div>
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Blog 3">
-                <h3>Blog 3</h3>
-            </div>
-            <div class="grid-item">
-                <img src="https://uwezakenya.org/wp-content/uploads/2019/07/uwezaartgallery.jpg" alt="Blog 4">
-                <h3>Blog 4</h3>
+                <h3>Expressive Portrait</h3>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; Kibera Connect. All rights reserved. <a href="#">Privacy Policy</a></p>
-        <p>@kibereconnect@gmail.com</p>
+        <p>&copy; Kibra Connect. All rights reserved. <a href="#">Privacy Policy</a></p>
+        <p>Email: kibereconnect@gmail.com</p>
     </footer>
 </body>
 </html>

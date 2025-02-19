@@ -22,115 +22,110 @@
                 </div>
             </div>
             <h2 class="presentation-subtitle text-center">IF YOU MISS IT IN YOUR MIND, YOU MISS IT IN LIFE.</h2>
-            <h2 class="presentation-subtitle text-center"></h2>
         </div>
     </div>
     <div class="moving-clouds" style="background-image: url('http://demos.creative-tim.com/paper-kit-2/assets/img/clouds.png');"></div>
 </div>
 <style>
-    @import url(https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css);
-    @import url(https://fonts.googleapis.com/css?family=Montserrat:400,300,700);
-    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css);
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      color: #333;
     }
-    .navigation{
+    .navigation {
       width: 70%;
       margin: auto;
       display: flex;
       align-items: center;
-      flex-direction: row;
       justify-content: space-around;
-  }
-  .logo{
+      padding: 20px 0;
+    }
+    .logo {
       color: whitesmoke;
-   
-  }
-  .Navlinks{
-      color: white;
-  }
-  .Navlinks > a{
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .Navlinks a {
       color: white;
       text-decoration: none;
-      margin: 16px;
-  }
-  
-    header {
-      background: #fff;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 0 16px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .Navlinks a:hover {
+      color: #ff5722;
+    }
+    .page-header {
+      position: relative;
+      height: 100vh;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-    }
-    header img {
-      height: 40px;
-    }
-    header nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-    header nav ul li {
-      display: inline;
-    }
-    header nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .hero {
-      background: #f9f9f9;
-      padding: 40px 20px;
+      justify-content: center;
+      color: white;
       text-align: center;
     }
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #333;
+    .filter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
     }
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #555;
+    .content-center {
+      position: relative;
+      z-index: 2;
     }
-    .hero button {
-      background: #ff5722;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      margin-top: 20px;
-      cursor: pointer;
-      border-radius: 5px;
+    .presentation-title {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
-    .hero button:hover {
-      background: #e64a19;
+    .presentation-subtitle {
+      font-size: 1.5rem;
+      font-weight: 300;
     }
-
+    .moving-clouds {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      animation: moveClouds 60s linear infinite;
+    }
+    @keyframes moveClouds {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 0; }
+    }
     .section {
-      padding: 20px;
+      padding: 60px 20px;
+      text-align: center;
     }
     .section h2 {
-      text-align: center;
-      margin-bottom: 20px;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
       color: #333;
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      gap: 30px;
+      padding: 0 20px;
     }
     .card {
       background: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
     .card img {
       width: 100%;
@@ -138,21 +133,26 @@
       object-fit: cover;
     }
     .card .content {
-      padding: 15px;
+      padding: 20px;
     }
     .card .content h3 {
       margin-top: 0;
+      font-size: 1.5rem;
       color: #333;
     }
     .card .content p {
       color: #666;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
-
     .subscribe {
-      background: #f1f1f1;
-      padding: 40px 20px;
+      background: #f9f9f9;
+      padding: 60px 20px;
       text-align: center;
+    }
+    .subscribe h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
     }
     .subscribe input[type="email"] {
       padding: 10px;
@@ -161,6 +161,7 @@
       margin-right: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font-size: 1rem;
     }
     .subscribe button {
       background: #ff5722;
@@ -169,11 +170,12 @@
       padding: 10px 20px;
       cursor: pointer;
       border-radius: 5px;
+      font-size: 1rem;
+      transition: background 0.3s ease;
     }
     .subscribe button:hover {
       background: #e64a19;
     }
-
     footer {
       background: #333;
       color: #fff;
@@ -183,25 +185,29 @@
     footer a {
       color: #ff5722;
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #e64a19;
     }
   </style>
 </head>
 <body>
 
   <section class="section">
-    <h2>Top Art Gallaries</h2>
+    <h2>Top Art Galleries</h2>
     <div class="grid">
       <div class="card">
         <img src="static/images/nobody.jpg" alt="Destination">
         <div class="content">
-          <h3>Noboby Owns Me</h3>
+          <h3>Nobody Owns Me</h3>
           <p>Explore the iconic Art.</p>
         </div>
       </div>
       <div class="card">
         <img src="static/images/nobody.jpg" alt="Destination">
         <div class="content">
-          <h3>Uweza Art Gallary</h3>
+          <h3>Uweza Art Gallery</h3>
           <p>Discover the charm of Art.</p>
         </div>
       </div>
@@ -219,47 +225,47 @@
     <h2>About Us</h2>
     <div class="grid">
       <div class="card">
-        <img src="story1-placeholder.jpg" alt="Story">
+        <img src="static/images/nobody.jpg" alt="Story">
         <div class="content">
           <h3>Our Story</h3>
           <p>Top 10 foods to try in Los Angeles.</p>
         </div>
       </div>
       <div class="card">
-        <img src="story2-placeholder.jpg" alt="Story">
+        <img src="static/images/nobody.jpg" alt="Story">
         <div class="content">
           <h3>Our Mission</h3>
           <p>Explore the vibrant local markets.</p>
         </div>
       </div>
       <div class="card">
-        <img src="story3-placeholder.jpg" alt="Story">
+        <img src="static/images/nobody.jpg" alt="Story">
         <div class="content">
-          <h3>Our Vission</h3>
+          <h3>Our Vision</h3>
           <p>Top hotels to book in 2024.</p>
         </div>
       </div>
     </div>
   </section>
   <section class="section">
-    <h2>Community projects</h2>
+    <h2>Community Projects</h2>
     <div class="grid">
       <div class="card">
-        <img src="story1-placeholder.jpg" alt="Story">
+        <img src="static/images/nobody.jpg" alt="Story">
         <div class="content">
           <h3>Kibera Fashion Week</h3>
           <p>.</p>
         </div>
       </div>
       <div class="card">
-        <img src="story2-placeholder.jpg" alt="Story">
+        <img src="static/images/nobody.jpg" alt="Story">
         <div class="content">
-          <h3>Kibera Parrade</h3>
+          <h3>Kibera Parade</h3>
           <p>.</p>
         </div>
       </div>
       <div class="card">
-        <img src="story3-placeholder.jpg" alt="Story">
+        <img src="static/images/nobody.jpg" alt="Story">
         <div class="content">
           <h3>Shield</h3>
           <p></p>
@@ -276,4 +282,4 @@
     </form>
   </section>
 
-{% endblock %}        
+{% endblock %}

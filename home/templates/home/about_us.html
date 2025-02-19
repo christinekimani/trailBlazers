@@ -39,19 +39,40 @@
     }
   </style>
 </head>
+
 <body class="bg-white text-gray-800">
   <header class="bg-black py-4">
     <div class="container mx-auto px-4">
-      <img alt="Rook logo" class="h-12 mx-auto" src="https://storage.googleapis.com/a1aa/image/s7v2eu5cLU3u-hLIyy2AvN1z2CG_ttLzVsy2lYpSghw.jpg"/>
     </div>
-    <nav>
-      <a href="index.html">home</a>
-      <a href="about_us.html">About Us</a>
-      <a href="gallery.html">Gallary</a>
-      <a href="#">Map</a>
-      <a href="#">Log In</a>
+    <header class="bg-white py-4 shadow-md">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <img alt="Kibra Connect Logo" class="h-12" src=""/>
+        <nav class="hidden md:flex space-x-6 text-black">
+          <a href="index.html" class="hover:text-red-500">Home</a>
+          <a href="about_us.html" class="hover:text-red-500">About Us</a>
+          <a href="gallery.html" class="hover:text-red-500">Gallery</a>
+          <a href="#" class="hover:text-red-500">Map</a>
+          <a href="#" class="hover:text-red-500">Log In</a>
+        </nav>
+        <!-- Mobile Menu Button -->
+        <button id="menu-button" class="md:hidden text-black text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white text-black flex flex-col space-y-4 px-4 py-2">
+        <a href="index.html" class="hover:text-red-500">Home</a>
+        <a href="about_us.html" class="hover:text-red-500">About Us</a>
+        <a href="gallery.html" class="hover:text-red-500">Gallery</a>
+        <a href="#" class="hover:text-red-500">Map</a>
+        <a href="#" class="hover:text-red-500">Log In</a>
+      </div>
+      <script>
+        document.getElementById('menu-button').addEventListener('click', function () {
+          document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+      </script>
 </header>
-  </header>
   <section class="bg-red-gradient py-16 text-white">
     <div class="container mx-auto px-4 text-center">
       <h1 class="text-4xl font-bold mb-4">WELCOME TO KIBRA</h1>
