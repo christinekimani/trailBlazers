@@ -21,4 +21,4 @@ def contact_us(request):
     return render(request, 'home/contact_us.html')
 
 def map_view(request):
-    return render(request, 'home/map.html')
+    return render(request, 'home/gallery.html')
