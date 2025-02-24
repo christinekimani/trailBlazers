@@ -25,97 +25,408 @@
         </div>
     </div>
     <div class="moving-clouds" style="background-image: url('http://demos.creative-tim.com/paper-kit-2/assets/img/clouds.png');"></div>
-</div>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-    body {
-      font-family: 'Poppins', sans-serif;
+  </div>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Della+Respira&family=Golos+Text:wght@400..900&family=Poppins:wght@300;400;500;600;700&display=swap');
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       color: #333;
+      background: #f9f9f9;
     }
-    .navigation {
-      width: 70%;
-      margin: auto;
+
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .section.dark {
+      background: #333;
+      color: #fff;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: inherit;
+    }
+
+    .collapsible-gallery {
+      width: 100%;
+      max-width: 1265px;
+      margin: 0 auto;
+    }
+
+    .collapsible-gallery figure {
+      width: 100%;
       display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin: 0 0 30px 0;
+    }
+
+    .collapsible-gallery figure figcaption {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+    }
+
+    .collapsible-gallery figure figcaption h1 {
+      font: normal normal 400 240% / 1.5cap "Della Respira", serif;
+      padding: 0 0 10px 0;
+      margin: 0 0 20px 0;
+      border-bottom: 1px solid #333;
+      text-wrap: balance;
+    }
+
+    .collapsible-gallery figure figcaption p {
+      color: #bbb;
+      padding-left: 30px;
+      margin: 0;
+      border-left: 10px solid;
+      border-image: repeating-linear-gradient(
+          43deg,
+          white,
+          white 4px,
+          transparent 5px,
+          transparent 9px,
+          white 10px
+        )
+        10;
+      text-wrap: pretty;
+    }
+
+    .collapsible-gallery figure figcaption p span:last-of-type {
+      display: none;
+    }
+
+    .collapsible-gallery button {
+      font: normal normal 400 12pt / 2cap "Golos Text", sans-serif;
+      width: 200px;
+      height: 50px;
+      background-color: transparent;
+      border: 1px solid #666;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-around;
-      padding: 20px 0;
-    }
-    .logo {
-      color: whitesmoke;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-    .Navlinks a {
-      color: white;
-      text-decoration: none;
-      margin: 0 16px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    .Navlinks a:hover {
-      color: #ff5722;
-    }
-    .page-header {
+      justify-content: center;
       position: relative;
-      height: 100vh;
+      overflow: hidden;
+    }
+
+    .collapsible-gallery button::after {
+      position: absolute;
+      right: 100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ccc;
+      content: "";
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+
+    .collapsible-gallery button:hover::after {
+      right: 0;
+      transition: all 0.3s ease;
+    }
+
+    .collapsible-gallery button input {
+      display: none;
+    }
+
+    .collapsible-gallery button label {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    .filter {
+
+    .collapsible-gallery button:hover label {
+      color: black;
+      transition: all 0.3s ease;
+    }
+
+    .collapsible-gallery button label span {
+      display: none;
+    }
+
+    .collapsible-gallery button:not(:has(input:checked)) label span:first-of-type {
+      display: initial;
+    }
+
+    .collapsible-gallery button:has(input:checked) label span:last-of-type {
+      display: initial;
+    }
+
+    .collapsible-gallery section {
+      width: 100%;
+      height: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: stretch;
+      border-right: 1px solid #555;
+      border-bottom: 1px solid #555;
+      border-left: 1px solid #555;
+      transition: all 0.5s ease;
+      position: relative;
+    }
+
+    .collapsible-gallery section::before {
       position: absolute;
       top: 0;
-      left: 0;
+      right: 0;
       width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .content-center {
-      position: relative;
+      height: 2px;
+      background-image: linear-gradient(
+        90deg,
+        #ff00bb,
+        #ff00b6,
+        #ff00a8,
+        #ff0b93,
+        #ff347a,
+        #ff585f,
+        #ff7a44,
+        #ff9829,
+        #ffb20c,
+        #ffc500,
+        #ffd100,
+        #ffd500
+      );
+      content: "";
       z-index: 2;
+      transition: all 1.2s ease;
     }
-    .presentation-title {
-      font-size: 4rem;
-      font-weight: 700;
-      margin-bottom: 20px;
+
+    .collapsible-gallery figure:has(button input:checked) ~ section::before {
+      width: 0px;
+      transition: all 1.2s ease;
     }
-    .presentation-subtitle {
-      font-size: 1.5rem;
-      font-weight: 300;
-    }
-    .moving-clouds {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+
+    .collapsible-gallery div {
+      flex-grow: 1;
+      opacity: 0;
       background-size: cover;
-      animation: moveClouds 60s linear infinite;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      transition: all 0.4s ease;
     }
-    @keyframes moveClouds {
-      0% { background-position: 0 0; }
-      100% { background-position: 100% 0; }
+
+    .collapsible-gallery figure:has(button input:checked) ~ section {
+      height: 220px;
+      transition: all 0.5s ease;
     }
-    .section {
-      padding: 60px 20px;
-      text-align: center;
+
+    .collapsible-gallery figure:has(button input:checked) ~ section div,
+    .collapsible-gallery figure:has(button input:checked)
+      ~ section
+      div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div {
+      opacity: 1;
+      flex-grow: 2;
+      transition-delay: 0.15s;
     }
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      color: #333;
+
+    .collapsible-gallery figure:has(button input:checked) ~ section div + div,
+    .collapsible-gallery figure:has(button input:checked)
+      ~ section
+      div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div {
+      opacity: 1;
+      transition-delay: 0.3s;
+      flex-grow: 3;
     }
+
+    .collapsible-gallery figure:has(button input:checked) ~ section div + div + div,
+    .collapsible-gallery figure:has(button input:checked)
+      ~ section
+      div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div {
+      opacity: 1;
+      transition-delay: 0.45s;
+      flex-grow: 4;
+    }
+
+    .collapsible-gallery figure:has(button input:checked) ~ section div + div + div + div,
+    .collapsible-gallery figure:has(button input:checked)
+      ~ section
+      div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div {
+      opacity: 1;
+      transition-delay: 0.6s;
+      flex-grow: 5;
+    }
+
+    .collapsible-gallery figure:has(button input:checked) ~ section div + div + div + div + div,
+    .collapsible-gallery figure:has(button input:checked)
+      ~ section
+      div
+      + div
+      + div
+      + div
+      + div
+      + div
+      + div {
+      opacity: 1;
+      transition-delay: 0.75s;
+      flex-grow: 6;
+    }
+
+    .collapsible-gallery figure:has(button input:checked) ~ section div + div + div + div + div + div {
+      opacity: 1;
+      transition-delay: 0.9s;
+      flex-grow: 7;
+    }
+
+    .collapsible-gallery section div:hover {
+      flex-grow: 2 !important;
+    }
+
+    .collapsible-gallery section:has(div:hover) div:not(:hover) {
+      flex-grow: 1 !important;
+    }
+
+    .collapsible-gallery section:has(div:hover) div {
+      transition-delay: 0s !important;
+    }
+
+    .collapsible-gallery figure:has(button input:checked) ~ section div {
+      animation: pointerFix 1.7s linear 0s 1 normal;
+    }
+
+    @keyframes pointerFix {
+      0% {
+        pointer-events: none;
+      }
+      99% {
+        pointer-events: none;
+      }
+      100% {
+        pointer-events: initial;
+      }
+    }
+
+    /* Change Gallery Images */
+    .collapsible-gallery section div:first-of-type {
+      background-image: url("{% static 'images/nobody.jpg' %}");
+    }
+
+    .collapsible-gallery section div + div {
+      background-image: url("{% static 'images/nobody.jpg' %}");
+    }
+
+    .collapsible-gallery section div + div + div {
+      background-image: url("{% static 'images/rafiki.jpg' %}");
+    }
+
+    .collapsible-gallery section div + div + div + div {
+      background-image: url("{% static 'images/nobody.jpg' %}");
+    }
+
+    .collapsible-gallery section div + div + div + div + div {
+      background-image: url("{% static 'images/nobody.jpg' %}");
+    }
+
+    .collapsible-gallery section div + div + div + div + div + div {
+      background-image: url("{% static 'images/nobody.jpg' %}");
+    }
+
+    @media (max-width: 900px) {
+      .collapsible-gallery figure {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .collapsible-gallery figure figcaption {
+        margin-bottom: 20px;
+      }
+      .collapsible-gallery figure figcaption p span:first-of-type {
+        display: none;
+      }
+      .collapsible-gallery figure figcaption p span:last-of-type {
+        display: initial;
+      }
+      .collapsible-gallery button {
+        width: 100%;
+        max-width: 600px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .collapsible-gallery figure figcaption {
+        max-width: unset;
+      }
+      .collapsible-gallery button {
+        max-width: unset;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .collapsible-gallery section {
+        flex-direction: column;
+      }
+      .collapsible-gallery figure:has(button input:checked) ~ section {
+        height: 1000px;
+      }
+    }
+
+    /* Grid and Card Styles */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       padding: 0 20px;
     }
+
     .card {
       background: #fff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -123,105 +434,154 @@
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .card:hover {
       transform: translateY(-10px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
+
     .card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
     }
+
     .card .content {
       padding: 20px;
     }
+
     .card .content h3 {
       margin-top: 0;
       font-size: 1.5rem;
       color: #333;
     }
+
     .card .content p {
       color: #666;
       font-size: 1rem;
     }
+
     .subscribe {
-      background: #f9f9f9;
-      padding: 60px 20px;
+      background: #ff5722;
+      padding: 80px 20px;
       text-align: center;
+      color: #fff;
     }
+
     .subscribe h2 {
       font-size: 2rem;
       margin-bottom: 20px;
-      color: #333;
     }
+
     .subscribe input[type="email"] {
-      padding: 10px;
+      padding: 12px;
       width: 300px;
       max-width: 100%;
       margin-right: 10px;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 5px;
       font-size: 1rem;
     }
+
     .subscribe button {
-      background: #ff5722;
+      background: #333;
       color: #fff;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 24px;
       cursor: pointer;
       border-radius: 5px;
       font-size: 1rem;
       transition: background 0.3s ease;
     }
+
     .subscribe button:hover {
-      background: #e64a19;
+      background: #555;
     }
+
     footer {
       background: #333;
       color: #fff;
       padding: 20px;
       text-align: center;
     }
+
     footer a {
       color: #ff5722;
       text-decoration: none;
       transition: color 0.3s ease;
     }
+
     footer a:hover {
       color: #e64a19;
     }
   </style>
-</head>
-<body>
 
   <section class="section">
     <h2>Top Art Galleries</h2>
+    <div class="collapsible-gallery">
+      <figure>
+        <figcaption>
+          <h1>Art Galleries</h1>
+          <p>
+            Explore the vibrant art scene of Kibera. Use the button <span>to the right</span> <span>below</span> to open and close the gallery. Hover over images to expand them.
+          </p>
+        </figcaption>
+        <button>
+          <label for="init">
+            <span>Expand</span>
+            <span>Collapse</span>
+          </label>
+          <input type="checkbox" name="init" id="init">
+        </button>
+      </figure>
+      <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <h2>About Us</h2>
     <div class="grid">
       <div class="card">
-        <img src="static/images/nobody.jpg" alt="Destination">
+        <img src="{% static 'images/nobody.jpg' %}" alt="Our Story">
         <div class="content">
-          <h3>Nobody Owns Me</h3>
-          <p>Explore the iconic Art.</p>
+          <h3>Our Story</h3>
+          <p>Learn about our journey and commitment to the Kibera community.</p>
         </div>
       </div>
       <div class="card">
+<<<<<<< HEAD
         <img src="https://www.instagram.com/uwezaartgallery/p/DFYDtqHRKQu/?hl=en    " alt="Destination">
+=======
+        <img src="{% static 'images/nobody.jpg' %}" alt="Our Mission">
+>>>>>>> 4c23206d579d5bc1def6110bb630b8615262d394
         <div class="content">
-          <h3>Uweza Art Gallery</h3>
-          <p>Discover the charm of Art.</p>
+          <h3>Our Mission</h3>
+          <p>Empowering the community through art, education, and innovation.</p>
         </div>
       </div>
       <div class="card">
+<<<<<<< HEAD
         <img src="https://www.instagram.com/uwezaartgallery/p/DFktWvvReiq/?hl=en" alt="Destination">
+=======
+        <img src="{% static 'images/nobody.jpg' %}" alt="Our Vision">
+>>>>>>> 4c23206d579d5bc1def6110bb630b8615262d394
         <div class="content">
-          <h3>Rafiki Art Space</h3>
-          <p>Experience breathtaking views.</p>
+          <h3>Our Vision</h3>
+          <p>A thriving Kibera where art and culture drive sustainable development.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section">
+<<<<<<< HEAD
     <h2>About Us</h2>
     <div class="grid">
       <div class="card">
@@ -252,34 +612,48 @@
     <div class="grid">
       <div class="card">
         <img src="https://www.instagram.com/rafiki_art_space/p/DCgNXzGIWGx/?hl=en" alt="Story">
+=======
+    <h2>Community Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="{% static 'images/nobody.jpg' %}" alt="Kibera Fashion Week">
+>>>>>>> 4c23206d579d5bc1def6110bb630b8615262d394
         <div class="content">
           <h3>Kibera Fashion Week</h3>
-          <p>.</p>
+          <p>Celebrating local talent and creativity in fashion.</p>
         </div>
       </div>
       <div class="card">
+<<<<<<< HEAD
         <img src="https://www.instagram.com/clinton_artisto_/p/DBhJxWYItUp/?hl=en" alt="Story">
+=======
+        <img src="{% static 'images/nobody.jpg' %}" alt="Kibera Parade">
+>>>>>>> 4c23206d579d5bc1def6110bb630b8615262d394
         <div class="content">
           <h3>Kibera Parade</h3>
-          <p>.</p>
+          <p>A vibrant showcase of community spirit and culture.</p>
         </div>
       </div>
       <div class="card">
-        <img src="static/images/nobody.jpg" alt="Story">
+        <img src="{% static 'images/nobody.jpg' %}" alt="Shield">
         <div class="content">
           <h3>Shield</h3>
-          <p></p>
+          <p>Protecting and nurturing the next generation through art and education.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="subscribe">
-    <h2>Get Your Travel Inspiration Straight to Your Inbox</h2>
+    <h2>Stay Connected with Kibera</h2>
+    <p>Subscribe to our newsletter for updates on events, projects, and more.</p>
     <form>
       <input type="email" placeholder="Enter your email">
       <button>Subscribe</button>
     </form>
   </section>
 
+  <footer>
+    <p>&copy; 2024 Kibera Community. All rights reserved. | <a href="#">Privacy Policy</a></p>
+  </footer>
 {% endblock %}
