@@ -123,7 +123,7 @@ USE_TZ = True
 
 
 # URL to access static files
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Directory for project-level static files
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
